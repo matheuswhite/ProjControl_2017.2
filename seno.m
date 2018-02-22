@@ -1,3 +1,5 @@
-function y = seno(t, T, offset, A)
+function y = seno(counter, T, offset, A)
 
-y = A*sin(t*2*pi/T) + offset;
+%counter = cast(counter, 'double');
+
+y = A*sin(counter*2*pi/T) + offset;
