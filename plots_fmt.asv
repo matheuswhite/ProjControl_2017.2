@@ -1,0 +1,8 @@
+function plots_fmt(data1, axis1, name1, name2)
+
+plot(data1(:,1), data1(:,2));
+axis(axis1);
+xlabel(name1);
+ylabel(name2);
+
+end
