@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.449"
+    ComputedModelVersion    "1.519"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 0.0, 960.0, 1040.0]
+      Location		      [-7.0, 0.0, 974.0, 1047.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -47,7 +47,7 @@ Model {
 	$PropName		"ExplorerBarInfo"
 	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[0]
+	Visible			[1]
       }
       Object {
 	$PropName		"EditorsInfo"
@@ -56,9 +56,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[910.0, 895.0]
-	ZoomFactor		[0.8]
-	Offset			[1307.3853163877054, 393.03128666989721]
+	Extents			[924.0, 872.0]
+	ZoomFactor		[1.25]
+	Offset			[84.2818986893979, 422.22260266139978]
       }
     }
   }
@@ -67,11 +67,11 @@ Model {
   Creator		  "MLevis"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Aluno IC"
+  LastModifiedBy	  "Aluno"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 23 08:53:18 2018"
-  RTWModifiedTimeStamp	  443695924
-  ModelVersionFormat	  "1.%<AutoIncrement:449>"
+  LastModifiedDate	  "Mon Mar 26 18:48:53 2018"
+  RTWModifiedTimeStamp	  443990927
+  ModelVersionFormat	  "1.%<AutoIncrement:519>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1161,7 +1161,7 @@ Model {
   }
   System {
     Name		    "coupled_tanks_quick_start"
-    Location		    [0, 0, 960, 1040]
+    Location		    [-7, 0, 967, 1047]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1173,9 +1173,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "764"
+    SIDHighWatermark	    "765"
     Block {
       BlockType		      Constant
       Name		      "Amplitude_c (V)"
@@ -1216,7 +1216,7 @@ Model {
       ZOrder		      565
       DropShadow	      on
       FontSize		      12
-      Value		      "4"
+      Value		      "6"
     }
     Block {
       BlockType		      Constant
@@ -1238,7 +1238,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Controllers"
-	Location		[0, 0, 960, 1040]
+	Location		[-7, 0, 967, 1047]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1250,7 +1250,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  Inport
 	  Name			  "r(t)"
@@ -1278,7 +1278,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Controller Master"
-	    Location		    [-8, -8, 1928, 1048]
+	    Location		    [-7, 0, 967, 1047]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1290,7 +1290,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "e(t)"
@@ -4854,7 +4854,7 @@ Model {
 	  SID			  "685"
 	  Position		  [660, 476, 700, 504]
 	  ZOrder		  638
-	  GotoTag		  "Kp1"
+	  GotoTag		  "Kp2"
 	  TagVisibility		  "global"
 	}
 	Block {
@@ -4863,7 +4863,7 @@ Model {
 	  SID			  "686"
 	  Position		  [660, 526, 700, 554]
 	  ZOrder		  639
-	  GotoTag		  "Ki1"
+	  GotoTag		  "Ki2"
 	  TagVisibility		  "global"
 	}
 	Block {
@@ -4872,7 +4872,7 @@ Model {
 	  SID			  "687"
 	  Position		  [660, 581, 700, 609]
 	  ZOrder		  640
-	  GotoTag		  "Kd1"
+	  GotoTag		  "Kd2"
 	  TagVisibility		  "global"
 	}
 	Block {
@@ -4881,7 +4881,7 @@ Model {
 	  SID			  "688"
 	  Position		  [640, 636, 725, 674]
 	  ZOrder		  641
-	  GotoTag		  "ControllerType1"
+	  GotoTag		  "ControllerType2"
 	  TagVisibility		  "global"
 	}
 	Block {
@@ -4923,7 +4923,7 @@ Model {
 	  BlockType		  Goto
 	  Name			  "Goto1"
 	  SID			  "702"
-	  Position		  [1135, 495, 1190, 525]
+	  Position		  [655, 735, 710, 765]
 	  ZOrder		  651
 	  GotoTag		  "PID_m"
 	  TagVisibility		  "global"
@@ -4932,7 +4932,7 @@ Model {
 	  BlockType		  Goto
 	  Name			  "Goto2"
 	  SID			  "703"
-	  Position		  [610, 720, 665, 750]
+	  Position		  [1115, 495, 1170, 525]
 	  ZOrder		  652
 	  GotoTag		  "PID_s"
 	  TagVisibility		  "global"
@@ -4983,14 +4983,11 @@ Model {
 	  BlockType		  Mux
 	  Name			  "Mux4"
 	  SID			  "452"
-	  Ports			  [2, 1]
-	  Position		  [566, 620, 604, 625]
+	  Ports			  [3, 1]
+	  Position		  [610, 511, 615, 549]
 	  ZOrder		  381
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
 	  ShowName		  off
-	  Inputs		  "2"
+	  Inputs		  "3"
 	  DisplayOption		  "bar"
 	}
 	Block {
@@ -5051,14 +5048,6 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  1501
-	  SrcBlock		  "Controller Master"
-	  SrcPort		  2
-	  Points		  [25, 0]
-	  DstBlock		  "Mux4"
-	  DstPort		  1
-	}
-	Line {
 	  ZOrder		  1516
 	  SrcBlock		  "From2"
 	  SrcPort		  1
@@ -5098,14 +5087,6 @@ Model {
 	  Points		  [10, 0; 0, -100]
 	  DstBlock		  "Controller Slave"
 	  DstPort		  3
-	}
-	Line {
-	  ZOrder		  1521
-	  SrcBlock		  "Mux4"
-	  SrcPort		  1
-	  Points		  [0, 105]
-	  DstBlock		  "Goto2"
-	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  1534
@@ -5187,12 +5168,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [13, 0; 0, -15; 32, 0]
 	  Branch {
-	    ZOrder		    1503
-	    DstBlock		    "Mux4"
-	    DstPort		    2
-	  }
-	  Branch {
-	    ZOrder		    1502
+	    ZOrder		    1609
 	    Points		    [0, -55]
 	    Branch {
 	      ZOrder		      1366
@@ -5215,6 +5191,11 @@ Model {
 	      DstBlock		      "Sum2"
 	      DstPort		      1
 	    }
+	  }
+	  Branch {
+	    ZOrder		    1608
+	    DstBlock		    "Mux4"
+	    DstPort		    1
 	  }
 	}
 	Line {
@@ -5279,8 +5260,17 @@ Model {
 	  SrcBlock		  "Sum3"
 	  SrcPort		  1
 	  Points		  [28, 0; 0, 45]
-	  DstBlock		  "Controller Master"
-	  DstPort		  1
+	  Branch {
+	    ZOrder		    1643
+	    Points		    [0, 175]
+	    DstBlock		    "Mux4"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    1642
+	    DstBlock		    "Controller Master"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  1519
@@ -5288,13 +5278,6 @@ Model {
 	  SrcPort		  1
 	  Points		  [25, 0; 0, 35]
 	  DstBlock		  "Switch"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  1520
-	  SrcBlock		  "Mux5"
-	  SrcPort		  1
-	  DstBlock		  "Goto1"
 	  DstPort		  1
 	}
 	Line {
@@ -5321,6 +5304,29 @@ Model {
 	  DstBlock		  "Goto4"
 	  DstPort		  1
 	}
+	Line {
+	  ZOrder		  1603
+	  SrcBlock		  "Mux4"
+	  SrcPort		  1
+	  Points		  [8, 0; 0, 220]
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1604
+	  SrcBlock		  "Mux5"
+	  SrcPort		  1
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1610
+	  SrcBlock		  "Controller Master"
+	  SrcPort		  2
+	  Points		  [20, 0; 0, 85]
+	  DstBlock		  "Mux4"
+	  DstPort		  2
+	}
       }
     }
     Block {
@@ -5343,7 +5349,6 @@ Model {
       ZOrder		      588
       DropShadow	      on
       FontSize		      12
-      Value		      "0"
     }
     Block {
       BlockType		      Constant
@@ -5380,9 +5385,9 @@ Model {
       BlockType		      From
       Name		      "From1"
       SID		      "384"
-      Position		      [1750, 991, 1805, 1019]
+      Position		      [1730, 991, 1805, 1019]
       ZOrder		      359
-      GotoTag		      "Tank1"
+      GotoTag		      "SelectedTank"
       TagVisibility	      "global"
     }
     Block {
@@ -5487,7 +5492,8 @@ Model {
       Position		      [2180, 1203, 2255, 1227]
       ZOrder		      622
       BlockMirror	      on
-      GotoTag		      "Switch_Tank"
+      GotoTag		      "Tank_Switch"
+      TagVisibility	      "global"
     }
     Block {
       BlockType		      From
@@ -6121,7 +6127,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      ".001"
+      Value		      "3"
     }
     Block {
       BlockType		      Constant
@@ -6132,7 +6138,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      ".001"
+      Value		      "0"
     }
     Block {
       BlockType		      Constant
@@ -6143,7 +6149,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      ".05"
+      Value		      ".5"
     }
     Block {
       BlockType		      Constant
@@ -6154,7 +6160,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      ".05"
+      Value		      "0"
     }
     Block {
       BlockType		      Constant
@@ -6165,7 +6171,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      "2"
+      Value		      "1.5"
     }
     Block {
       BlockType		      Constant
@@ -6176,7 +6182,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      "2"
+      Value		      "0"
     }
     Block {
       BlockType		      Scope
@@ -6187,8 +6193,8 @@ Model {
       ZOrder		      655
       BlockMirror	      on
       Floating		      off
-      Location		      [972, 60, 1909, 500]
-      Open		      on
+      Location		      [961, 57, 1918, 497]
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -6206,8 +6212,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.85895     0.83371     0.10886    0.081818"
-      TimeRange		      "300"
+      LegendLocations	      "0.90401     0.83371     0.10658    0.081818"
+      TimeRange		      "100"
       YMin		      "0"
       YMax		      "30"
       SaveToWorkspace	      on
@@ -6224,7 +6230,7 @@ Model {
       ZOrder		      654
       BlockMirror	      on
       Floating		      off
-      Location		      [971, 65, 1906, 505]
+      Location		      [6, 60, 1914, 500]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -6242,7 +6248,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      TimeRange		      "300"
+      LegendLocations	      "0.93073     0.83371    0.053459    0.081818"
+      TimeRange		      "250"
       YMin		      "0"
       YMax		      "30"
       SaveToWorkspace	      on
@@ -6259,8 +6266,8 @@ Model {
       ZOrder		      311
       BlockMirror	      on
       Floating		      off
-      Location		      [971, 65, 1906, 505]
-      Open		      off
+      Location		      [964, 57, 1919, 497]
+      Open		      on
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -6277,8 +6284,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.78164     0.77159     0.10267    0.081818"
-      TimeRange		      "300"
+      LegendLocations	      "0.86614     0.83371     0.10052    0.081818"
+      TimeRange		      "100"
       YMin		      "0"
       YMax		      "30"
       SaveToWorkspace	      on
@@ -6623,9 +6630,10 @@ Model {
       ZOrder		      300
       BlockMirror	      on
       Floating		      off
-      Location		      [971, 570, 1910, 1030]
+      Location		      [967, 561, 1913, 1021]
       Open		      on
       NumInputPorts	      "1"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -6635,14 +6643,14 @@ Model {
 	FigureColor		"[0.313725490196078 0.313725490196078 0.313725490196078]"
 	AxesColor		"[1 1 1]"
 	AxesTickColor		"[0 0 0]"
-	LineColors		"[0.929411764705882 0.694117647058824 0.125490196078431;0 0.498039215686275 0;1 0 0;0 0 1;0 1 0;0 0 1]"
+	LineColors		"[0.929411764705882 0.694117647058824 0.125490196078431;0 0.498039215686275 0;1 0 0;0 0 1;1 0 1;0 0 1]"
 	LineStyles		"-|-|-|-|-|-"
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.86729     0.77316     0.10224     0.14638"
-      TimeRange		      "300"
+      LegendLocations	      "0.84592     0.73225     0.10148     0.18043"
+      TimeRange		      "100"
       YMin		      "-100"
       YMax		      "100"
       SaveToWorkspace	      on
@@ -6659,9 +6667,10 @@ Model {
       ZOrder		      355
       BlockMirror	      on
       Floating		      off
-      Location		      [13, 578, 936, 1030]
+      Location		      [25, 475, 948, 927]
       Open		      off
       NumInputPorts	      "1"
+      ZoomMode		      "yonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -6677,6 +6686,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.86331     0.76881     0.10401     0.14897"
       TimeRange		      "300"
       YMin		      "-100"
       YMax		      "100"
@@ -10396,9 +10406,9 @@ MatData {
     "  \"0    @               X   \"X 0  !@    @    \"          4    (     0    $    !          4 !  1     0   %4   !O;"
     "&1?;F%M90           &]L9%]B;&]C:P          :7-?=6YI<75E          !I<U]D96QE=&5D         &ES7VUO9&5L7V-L;W-I;F<    "
     " #@   #@    &    \"     0         !0    @    !    !0    $         $     4   !(24PM,0    X    X    !@    @    &    "
-    "      4    (     0    $    !          D    (        0 !0@T .    ,     8    (    \"0(        %    \"     $    !    "
-    " 0         \"  $  0    X    P    !@    @    ) @        4    (     0    $    !          (  0      #@   #     &    \""
-    "     D\"        !0    @    !     0    $          @ !       "
+    "      4    (     0    $    !          D    (        0 \"@@T .    ,     8    (    \"0(        %    \"     $    !   "
+    "  0         \"  $  0    X    P    !@    @    ) @        4    (     0    $    !          (  0      #@   #     &    "
+    "\"     D\"        !0    @    !     0    $          @ !       "
   }
   DataRecord {
     Tag			    DataTag1
@@ -10406,7 +10416,7 @@ MatData {
     "-T7VYA;64       X    8 0  !@    @    \"          4    (     0    $    !          4 !  -     0   \"<   !O;&1?;F%M90"
     "      :7-?9&5L971E9    &]B:F5C=%]B;&]C:P  #@   #@    &    \"     0         !0    @    !    !0    $         $     4"
     "   !(24PM,0    X    P    !@    @    ) @        4    (     0    $    !          (  0      #@   #@    &    \"     8 "
-    "        !0    @    !     0    $         \"0    @       !  %\"#0 "
+    "        !0    @    !     0    $         \"0    @       !  *\"#0 "
   }
   DataRecord {
     Tag			    DataTag2
@@ -10414,7 +10424,7 @@ MatData {
     "-T7VYA;64       X    8 0  !@    @    \"          4    (     0    $    !          4 !  -     0   \"<   !O;&1?;F%M90"
     "      :7-?9&5L971E9    &]B:F5C=%]B;&]C:P  #@   #@    &    \"     0         !0    @    !    !0    $         $     4"
     "   !(24PM,0    X    P    !@    @    ) @        4    (     0    $    !          (  0      #@   #@    &    \"     8 "
-    "        !0    @    !     0    $         \"0    @       !  %\"#0 "
+    "        !0    @    !     0    $         \"0    @       !  *\"#0 "
   }
 }
 #Finite State Machines
@@ -12044,7 +12054,10 @@ Stateflow {
     firstTransition	    102
     firstJunction	    101
     viewObj		    89
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -12340,7 +12353,10 @@ Stateflow {
     firstTransition	    114
     firstJunction	    113
     viewObj		    104
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -12368,8 +12384,8 @@ Stateflow {
       script		      "function y = derivative(e, Kd, enable, Kp, alfa, filter_enable)\n\npersistent prev_error;\npersis"
       "tent y_error;\npersistent aux;\n\nif isempty(prev_error)\n   prev_error = 0; \nend\n\nif isempty(y_error)\n   y_"
       "error = 0; \nend\n\nif isempty(aux)\n   aux = 0; \nend\n\n\n%1/0.1 == 10\nTd = Kd/Kp;\n\n\nif(filter_enable == 1"
-      ")\n    y = ((e - prev_error + alfa*y_error) * Kd)/(1+(Td*alfa));\nelse\n    y = Kd*(e - prev_error)*enable/0.1;\n"
-      "end\n\n\nprev_error = e;\ny_error = y;\n\nend"
+      ")\n    y = ((e - prev_error + alfa*y_error)*enable * Kd)/(1+(Td*alfa));\nelse\n    y = Kd*(e - prev_error)*enabl"
+      "e/0.1;\nend\n\n\nprev_error = e;\ny_error = y;\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
