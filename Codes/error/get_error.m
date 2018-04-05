@@ -1,19 +1,18 @@
-function [t, e] = get_error(file, ref)
+function [t, e] = get_error(file)
 
-fig = openfig(file);
-h = findobj(fig, 'Type', 'line');
-t = get(h, 'Xdata');
-y6 = get(h, 'Ydata');
+open(file);
+D1 = get(gca,'Children'); %get the handle of the line object
+XData1 = cell2mat(get(D1,'XData')); %get the x data
+YData1 = cell2mat(get(D1,'YData')); %get the y data
 
-y5 = ones(1, size(y6, 2))*ref;
+ref = YData1(1, :);
+output = YData1(2, :);
+t = XData1(1, :);
 
-e = y5 - y6;
+e = ref - output;
 
-plot(t, y5);
-hold on;
-plot(t, y6, 'r');
-hold on;
-plot(t, e, 'k');
-hold off;
+plot(XData1, ref, 'b', XData1, output, 'r', XData1, e, 'k');
+
+close;
 
 end
