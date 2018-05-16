@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.681"
+    ComputedModelVersion    "1.731"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1936.0, 1056.0]
+      Location		      [-7.0, 0.0, 974.0, 1047.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,9 +56,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1886.0, 881.0]
+	Extents			[924.0, 872.0]
 	ZoomFactor		[1.0]
-	Offset			[1598.9757788285217, 764.62527903334217]
+	Offset			[2698.1167217971706, 896.22399801130564]
       }
     }
   }
@@ -67,11 +67,11 @@ Model {
   Creator		  "MLevis"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Aluno IC"
+  LastModifiedBy	  "Aluno"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 25 18:50:48 2018"
-  RTWModifiedTimeStamp	  446581625
-  ModelVersionFormat	  "1.%<AutoIncrement:681>"
+  LastModifiedDate	  "Wed May 16 18:56:00 2018"
+  RTWModifiedTimeStamp	  448397622
+  ModelVersionFormat	  "1.%<AutoIncrement:731>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1169,7 +1169,7 @@ Model {
   }
   System {
     Name		    "coupled_tanks_quick_start"
-    Location		    [-8, -8, 1928, 1048]
+    Location		    [-7, 0, 967, 1047]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1183,7 +1183,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "813"
+    SIDHighWatermark	    "819"
     Block {
       BlockType		      Constant
       Name		      "Amplitude_c (V)"
@@ -1193,7 +1193,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      "5"
+      Value		      "30"
     }
     Block {
       BlockType		      Constant
@@ -1204,7 +1204,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      "10"
+      Value		      "0"
     }
     Block {
       BlockType		      ManualSwitch
@@ -1231,6 +1231,43 @@ Model {
       Position		      [2750, 1260, 2840, 1290]
       ZOrder		      709
       Value		      "[0; 0]"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Controller"
+      SID		      "818"
+      Ports		      [1]
+      Position		      [3410, 1134, 3440, 1166]
+      ZOrder		      714
+      Floating		      off
+      Location		      [964, 577, 1922, 1035]
+      Open		      on
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.81089     0.87194     0.15762    0.044396"
+      TimeRange		      "100"
+      YMin		      "0"
+      YMax		      "65"
+      SaveToWorkspace	      on
+      SaveName		      "state"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Constant
@@ -5427,6 +5464,15 @@ Model {
       Decimation	      "1"
     }
     Block {
+      BlockType		      Display
+      Name		      "Display1"
+      SID		      "819"
+      Ports		      [1]
+      Position		      [3125, 965, 3245, 1035]
+      ZOrder		      715
+      Decimation	      "1"
+    }
+    Block {
       BlockType		      Constant
       Name		      "Enable"
       SID		      "463"
@@ -5565,6 +5611,24 @@ Model {
       Position		      [3240, 668, 3345, 702]
       ZOrder		      705
       GotoTag		      "Controller_Selection"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From21"
+      SID		      "816"
+      Position		      [1835, 916, 1875, 944]
+      ZOrder		      712
+      GotoTag		      "Tank2"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From22"
+      SID		      "817"
+      Position		      [1825, 841, 1880, 869]
+      ZOrder		      713
+      GotoTag		      "Tank1"
       TagVisibility	      "global"
     }
     Block {
@@ -6029,7 +6093,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto5"
       SID		      "799"
-      Position		      [2435, 1115, 2475, 1145]
+      Position		      [2010, 875, 2050, 905]
       ZOrder		      695
       GotoTag		      "states"
       TagVisibility	      "global"
@@ -6242,7 +6306,7 @@ Model {
       SID		      "805"
       Position		      [2940, 1235, 3025, 1285]
       ZOrder		      701
-      Value		      "[0 0]"
+      Value		      "[0.01 0.004]"
       VectorParams1D	      off
     }
     Block {
@@ -6251,7 +6315,7 @@ Model {
       SID		      "804"
       Position		      [3060, 1340, 3095, 1370]
       ZOrder		      700
-      Value		      "0"
+      Value		      "3.25"
       VectorParams1D	      off
     }
     Block {
@@ -6328,7 +6392,7 @@ Model {
       ZOrder		      655
       BlockMirror	      on
       Floating		      off
-      Location		      [11, 584, 968, 1024]
+      Location		      [963, 57, 1920, 497]
       Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -6347,9 +6411,10 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.86189     0.83371     0.10658    0.081818"
       TimeRange		      "100"
       YMin		      "0"
-      YMax		      "30"
+      YMax		      "25"
       SaveToWorkspace	      on
       SaveName		      "tank1level1"
       LimitDataPoints	      off
@@ -6364,7 +6429,7 @@ Model {
       ZOrder		      654
       BlockMirror	      on
       Floating		      off
-      Location		      [6, 60, 1914, 500]
+      Location		      [964, 57, 1924, 516]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -6382,10 +6447,10 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.93073     0.83371    0.053459    0.081818"
+      LegendLocations	      "0.86233      0.8406     0.10625    0.078431"
       TimeRange		      "250"
-      YMin		      "0"
-      YMax		      "30"
+      YMin		      "-0.5"
+      YMax		      "10"
       SaveToWorkspace	      on
       SaveName		      "tank2level1"
       LimitDataPoints	      off
@@ -7374,6 +7439,17 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
+      BlockType		      Mux
+      Name		      "Mux4"
+      SID		      "815"
+      Ports		      [2, 1]
+      Position		      [1950, 852, 1955, 923]
+      ZOrder		      711
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
       BlockType		      Constant
       Name		      "OFF"
       SID		      "516"
@@ -7403,7 +7479,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      "60"
+      Value		      "2"
     }
     Block {
       BlockType		      Scope
@@ -9667,8 +9743,8 @@ Model {
       Position		      [2510, 1219, 2540, 1251]
       ZOrder		      675
       Floating		      off
-      Location		      [957, 58, 1915, 536]
-      Open		      on
+      Location		      [963, 58, 1921, 536]
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -9704,7 +9780,7 @@ Model {
       Position		      [2510, 1339, 2540, 1371]
       ZOrder		      690
       Floating		      off
-      Location		      [957, 594, 1915, 1039]
+      Location		      [963, 58, 1921, 519]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -9723,7 +9799,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.86204     0.83558     0.10647    0.080899"
+      LegendLocations	      "0.86204     0.83809     0.10647    0.078091"
       TimeRange		      "100"
       YMin		      "-1"
       YMax		      "30"
@@ -10466,18 +10542,8 @@ Model {
       ZOrder		      1590
       SrcBlock		      "MATLAB Function1"
       SrcPort		      2
-      Points		      [108, 0]
-      Branch {
-	ZOrder			1657
-	Points			[0, -75]
-	DstBlock		"Goto5"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			1656
-	DstBlock		"Demux"
-	DstPort			1
-      }
+      DstBlock		      "Demux"
+      DstPort		      1
     }
     Line {
       ZOrder		      1604
@@ -10568,9 +10634,19 @@ Model {
       ZOrder		      1658
       SrcBlock		      "states"
       SrcPort		      1
-      Points		      [30, 0; 0, 45]
-      DstBlock		      "MATLAB Function2"
-      DstPort		      1
+      Points		      [30, 0]
+      Branch {
+	ZOrder			1746
+	Points			[0, -55]
+	DstBlock		"Display1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			1745
+	Points			[0, 45]
+	DstBlock		"MATLAB Function2"
+	DstPort			1
+      }
     }
     Line {
       ZOrder		      1659
@@ -10614,9 +10690,18 @@ Model {
       ZOrder		      1666
       SrcBlock		      "MATLAB Function2"
       SrcPort		      1
-      Points		      [59, 0; 0, -380]
-      DstBlock		      "Switch Mesh1"
-      DstPort		      3
+      Points		      [59, 0]
+      Branch {
+	ZOrder			1743
+	DstBlock		"Controller"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			1742
+	Points			[0, -380]
+	DstBlock		"Switch Mesh1"
+	DstPort			3
+      }
     }
     Line {
       ZOrder		      1671
@@ -10633,6 +10718,29 @@ Model {
       DstBlock		      "Goto6"
       DstPort		      1
     }
+    Line {
+      ZOrder		      1739
+      SrcBlock		      "Mux4"
+      SrcPort		      1
+      DstBlock		      "Goto5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1740
+      SrcBlock		      "From21"
+      SrcPort		      1
+      Points		      [33, 0; 0, -25]
+      DstBlock		      "Mux4"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      1741
+      SrcBlock		      "From22"
+      SrcPort		      1
+      Points		      [30, 0; 0, 15]
+      DstBlock		      "Mux4"
+      DstPort		      1
+    }
     Annotation {
       SID		      "798"
       Name		      "Controlador Discreto"
@@ -10643,6 +10751,7 @@ Model {
       HorizontalAlignment     "left"
       VerticalAlignment	      "top"
       DropShadow	      on
+      ZOrder		      -1
     }
     Annotation {
       SID		      "797"
@@ -10654,6 +10763,7 @@ Model {
       HorizontalAlignment     "left"
       VerticalAlignment	      "top"
       DropShadow	      on
+      ZOrder		      -2
     }
     Annotation {
       SID		      "796"
@@ -10665,6 +10775,7 @@ Model {
       HorizontalAlignment     "left"
       VerticalAlignment	      "top"
       DropShadow	      on
+      ZOrder		      -3
     }
     Annotation {
       SID		      "155"
@@ -11597,7 +11708,7 @@ MatData {
     "  \"0    @               X   \"X 0  !@    @    \"          4    (     0    $    !          4 !  1     0   %4   !O;"
     "&1?;F%M90           &]L9%]B;&]C:P          :7-?=6YI<75E          !I<U]D96QE=&5D         &ES7VUO9&5L7V-L;W-I;F<    "
     " #@   #@    &    \"     0         !0    @    !    !0    $         $     4   !(24PM,0    X    X    !@    @    &    "
-    "      4    (     0    $    !          D    (        0 #(@T .    ,     8    (    \"0(        %    \"     $    !    "
+    "      4    (     0    $    !          D    (        0   A$ .    ,     8    (    \"0(        %    \"     $    !    "
     " 0         \"  $  0    X    P    !@    @    ) @        4    (     0    $    !          (  0      #@   #     &    \""
     "     D\"        !0    @    !     0    $          @ !       "
   }
@@ -11607,7 +11718,7 @@ MatData {
     "-T7VYA;64       X    8 0  !@    @    \"          4    (     0    $    !          4 !  -     0   \"<   !O;&1?;F%M90"
     "      :7-?9&5L971E9    &]B:F5C=%]B;&]C:P  #@   #@    &    \"     0         !0    @    !    !0    $         $     4"
     "   !(24PM,0    X    P    !@    @    ) @        4    (     0    $    !          (  0      #@   #@    &    \"     8 "
-    "        !0    @    !     0    $         \"0    @       !  ,B#0 "
+    "        !0    @    !     0    $         \"0    @       !   \"$0 "
   }
   DataRecord {
     Tag			    DataTag2
@@ -11615,7 +11726,7 @@ MatData {
     "-T7VYA;64       X    8 0  !@    @    \"          4    (     0    $    !          4 !  -     0   \"<   !O;&1?;F%M90"
     "      :7-?9&5L971E9    &]B:F5C=%]B;&]C:P  #@   #@    &    \"     0         !0    @    !    !0    $         $     4"
     "   !(24PM,0    X    P    !@    @    ) @        4    (     0    $    !          (  0      #@   #@    &    \"     8 "
-    "        !0    @    !     0    $         \"0    @       !  ,B#0 "
+    "        !0    @    !     0    $         \"0    @       !   \"$0 "
   }
 }
 #Finite State Machines
@@ -14828,10 +14939,7 @@ Stateflow {
     firstTransition	    179
     firstJunction	    178
     viewObj		    173
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -14973,10 +15081,7 @@ Stateflow {
     firstTransition	    189
     firstJunction	    188
     viewObj		    181
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -15193,7 +15298,7 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function u = controller(x_hat, r, y, K, K_e)\n\npersistent y_old\npersistent r_old\n\nif(isempty("
-      "y_old))\n    y_old = 0;\n    r_old = 0;\nend\n\nerror = y_old - r_old;\nu = -K*x_hat + K_e*error;\n\ny_old = y;\n"
+      "y_old))\n    y_old = 0;\n    r_old = 0;\nend\n\nerror = r_old - y_old;\nu = -K*x_hat + K_e*error;\n\ny_old = y;\n"
       "r_old = r;\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
@@ -15403,10 +15508,11 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [K, K_e] = calc_K(angles_, mags_)\n\nG = [0.9942 0; 0.0057 0.9942];\nH = [0.0739; 0.0002"
-      "];\n\nWc = [H; G*H];\n\nangles_ = angles_*(pi/180);\n\np1 = complex(pol2cart(angles_(1), mags_(1)));\np2 = compl"
-      "ex(pol2cart(angles_(2), mags_(2)));\np3 = complex(pol2cart(angles_(3), mags_(3)));\n\na1 = real(-(p1+p2));\na2 ="
-      " real(p1*p2);\n\nqc = G^2 + a1*G + a2*eye(2);\ninvWc = inv(Wc);\nK = [0 1]*invWc*qc;\n\n\n\nend"
+      script		      "function [K, K_e] = calc_K(angles_, mags_)\n\n% G = [0.9942 0; 0.0057 0.9942];\n% H = [0.0739; 0."
+      "0002];\n% \n% Wc = [H; G*H];\n% \n% angles_ = angles_*(pi/180);\n% \n% p1 = complex(pol2cart(angles_(1), mags_(1"
+      ")));\n% p2 = complex(pol2cart(angles_(2), mags_(2)));\n% p3 = complex(pol2cart(angles_(3), mags_(3)));\n% \n% a1"
+      " = real(-(p1+p2));\n% a2 = real(p1*p2);\n% \n% qc = G^2 + a1*G + a2*eye(2);\n% invWc = inv(Wc);\n% K = [0 1]*inv"
+      "Wc*qc;\n\nK = [0 0];\nK_e = 0;\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
