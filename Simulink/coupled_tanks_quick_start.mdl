@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.797"
+    ComputedModelVersion    "1.805"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, 0.0, 974.0, 1047.0]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -57,9 +57,9 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [924.0, 869.0]
+	  Extents		  [1886.0, 878.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [2267.0103968110634, 744.0384428325932]
+	  Offset		  [1351.0491764788439, 855.33513822839893]
 	}
 	Object {
 	  $ObjectID		  6
@@ -81,9 +81,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Aluno"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed May 23 17:58:34 2018"
-  RTWModifiedTimeStamp	  448999107
-  ModelVersionFormat	  "1.%<AutoIncrement:797>"
+  LastModifiedDate	  "Thu May 24 14:06:35 2018"
+  RTWModifiedTimeStamp	  449071271
+  ModelVersionFormat	  "1.%<AutoIncrement:805>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1220,7 +1220,7 @@ Model {
   }
   System {
     Name		    "coupled_tanks_quick_start"
-    Location		    [-7, 0, 967, 1047]
+    Location		    [-8, -8, 1928, 1048]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1234,7 +1234,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "860"
+    SIDHighWatermark	    "864"
     Block {
       BlockType		      Constant
       Name		      "Amplitude_c (V)"
@@ -1244,7 +1244,7 @@ Model {
       BlockMirror	      on
       DropShadow	      on
       FontSize		      12
-      Value		      "30"
+      Value		      "0"
     }
     Block {
       BlockType		      Constant
@@ -1271,7 +1271,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "789"
-      Position		      [1830, 1280, 1920, 1310]
+      Position		      [1735, 1340, 1825, 1370]
       ZOrder		      688
       Value		      "[4; 1]"
     }
@@ -1293,7 +1293,7 @@ Model {
       BlockMirror	      on
       Floating		      off
       Location		      [957, 577, 1915, 1035]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -1322,13 +1322,379 @@ Model {
       SampleTime	      "0"
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Controller Discrete "
+      SID		      "821"
+      Ports		      [4, 1]
+      Position		      [3145, 1119, 3260, 1191]
+      ZOrder		      717
+      RequestExecContextInheritance off
+      System {
+	Name			"Controller Discrete "
+	Location		[-7, 0, 967, 1047]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "x_hat"
+	  SID			  "822"
+	  Position		  [240, 188, 270, 202]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ref"
+	  SID			  "825"
+	  Position		  [205, 258, 235, 272]
+	  ZOrder		  2
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "y"
+	  SID			  "827"
+	  Position		  [205, 333, 235, 347]
+	  ZOrder		  4
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "K"
+	  SID			  "834"
+	  Position		  [20, 88, 50, 102]
+	  ZOrder		  10
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "835"
+	  Ports			  [1, 3]
+	  Position		  [125, 65, 130, 125]
+	  ZOrder		  11
+	  ShowName		  off
+	  Outputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  DiscreteIntegrator
+	  Name			  "Discrete-Time\nIntegrator"
+	  SID			  "831"
+	  Ports			  [1, 1]
+	  Position		  [360, 247, 395, 283]
+	  ZOrder		  8
+	  gainval		  "1"
+	  SampleTime		  "0.1"
+	  ICPrevOutput		  "DiscIntNeverNeededParam"
+	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "MATLAB Function"
+	  SID			  "854"
+	  Ports			  [3, 1]
+	  Position		  [375, 161, 445, 209]
+	  ZOrder		  17
+	  LibraryVersion	  "1.32"
+	  ErrorFcn		  "Stateflow.Translate.translate"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  TreatAsAtomicUnit	  on
+	  RequestExecContextInheritance	off
+	  SFBlockType		  "MATLAB Function"
+	  System {
+	    Name		    "MATLAB Function"
+	    Location		    [219, 337, 814, 775]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "22"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "K1"
+	      SID		      "854::1"
+	      Position		      [20, 101, 40, 119]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "K2"
+	      SID		      "854::22"
+	      Position		      [20, 136, 40, 154]
+	      ZOrder		      8
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "x_hat"
+	      SID		      "854::21"
+	      Position		      [20, 171, 40, 189]
+	      ZOrder		      7
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      "854::19"
+	      Ports		      [1, 1]
+	      Position		      [270, 230, 320, 270]
+	      ZOrder		      5
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      " SFunction "
+	      SID		      "854::18"
+	      Tag		      "Stateflow S-Function coupled_tanks_quick_start 22"
+	      Ports		      [3, 2]
+	      Position		      [180, 100, 230, 180]
+	      ZOrder		      4
+	      FunctionName	      "sf_sfun"
+	      PortCounts	      "[3 2]"
+	      EnableBusSupport	      on
+	      Port {
+		PortNumber		2
+		Name			"y"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      "854::20"
+	      Position		      [460, 241, 480, 259]
+	      ZOrder		      6
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "y"
+	      SID		      "854::5"
+	      Position		      [460, 101, 480, 119]
+	      ZOrder		      -5
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      20
+	      SrcBlock		      "K1"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      21
+	      SrcBlock		      "K2"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      22
+	      SrcBlock		      "x_hat"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "y"
+	      ZOrder		      23
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "y"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      24
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      25
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  SID			  "838"
+	  Ports			  [2, 1]
+	  Position		  [435, 257, 505, 293]
+	  ZOrder		  14
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "828"
+	  Ports			  [2, 1]
+	  Position		  [540, 170, 560, 190]
+	  ZOrder		  5
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "829"
+	  Ports			  [2, 1]
+	  Position		  [290, 255, 310, 275]
+	  ZOrder		  6
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "u\n"
+	  SID			  "823"
+	  Position		  [655, 173, 685, 187]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  42
+	  SrcBlock		  "MATLAB Function"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "u\n"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "ref"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "y"
+	  SrcPort		  1
+	  Points		  [60, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Discrete-Time\nIntegrator"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  24
+	  SrcBlock		  "Discrete-Time\nIntegrator"
+	  SrcPort		  1
+	  DstBlock		  "Product1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  51
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [225, 0]
+	  DstBlock		  "MATLAB Function"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  52
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [180, 0; 0, 90]
+	  DstBlock		  "MATLAB Function"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  23
+	  SrcBlock		  "K"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  25
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  34
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [33, 0; 0, 259; 251, 0; 0, -89]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  43
+	  SrcBlock		  "x_hat"
+	  SrcPort		  1
+	  Points		  [85, 0]
+	  DstBlock		  "MATLAB Function"
+	  DstPort		  3
+	}
+      }
+    }
+    Block {
       BlockType		      Constant
       Name		      "Controller Selection"
       SID		      "807"
-      Position		      [1365, 1220, 1395, 1250]
+      Position		      [1365, 1185, 1395, 1215]
       ZOrder		      703
       DropShadow	      on
       FontSize		      12
+      Value		      "2"
     }
     Block {
       BlockType		      Constant
@@ -5520,7 +5886,7 @@ Model {
       Name		      "Display1"
       SID		      "819"
       Ports		      [1]
-      Position		      [3125, 965, 3245, 1035]
+      Position		      [3125, 1015, 3245, 1085]
       ZOrder		      715
       Decimation	      "1"
     }
@@ -5703,6 +6069,15 @@ Model {
     }
     Block {
       BlockType		      From
+      Name		      "From24"
+      SID		      "862"
+      Position		      [1765, 1218, 1870, 1252]
+      ZOrder		      730
+      GotoTag		      "Obs_Gain_Selection"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
       Name		      "From3"
       SID		      "439"
       Position		      [2200, 788, 2285, 822]
@@ -5790,7 +6165,7 @@ Model {
       BlockType		      Constant
       Name		      "Gain Selection"
       SID		      "841"
-      Position		      [1365, 1315, 1395, 1345]
+      Position		      [1365, 1250, 1395, 1280]
       ZOrder		      721
       DropShadow	      on
       FontSize		      12
@@ -6017,7 +6392,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto29"
       SID		      "842"
-      Position		      [1480, 1314, 1585, 1346]
+      Position		      [1480, 1249, 1585, 1281]
       ZOrder		      722
       GotoTag		      "Gain_Selection"
       TagVisibility	      "global"
@@ -6029,6 +6404,15 @@ Model {
       Position		      [3605, 422, 3670, 448]
       ZOrder		      663
       GotoTag		      "tank_lvl1"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto30"
+      SID		      "864"
+      Position		      [1480, 1319, 1585, 1351]
+      ZOrder		      732
+      GotoTag		      "Obs_Gain_Selection"
       TagVisibility	      "global"
     }
     Block {
@@ -6190,7 +6574,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto6"
       SID		      "808"
-      Position		      [1480, 1219, 1585, 1251]
+      Position		      [1480, 1184, 1585, 1216]
       ZOrder		      704
       GotoTag		      "Controller_Selection"
       TagVisibility	      "global"
@@ -6500,7 +6884,7 @@ Model {
       BlockMirror	      on
       Floating		      off
       Location		      [955, 57, 1915, 516]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -6604,7 +6988,7 @@ Model {
       Name		      "MATLAB Function"
       SID		      "766"
       Ports		      [2, 1]
-      Position		      [1895, 1172, 2005, 1228]
+      Position		      [1820, 1082, 1930, 1138]
       ZOrder		      665
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -6719,173 +7103,6 @@ Model {
 	}
 	Line {
 	  ZOrder		  61
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "MATLAB Function1"
-      SID		      "767"
-      Ports		      [3, 2]
-      Position		      [2105, 1119, 2210, 1231]
-      ZOrder		      666
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      RequestExecContextInheritance off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"MATLAB Function1"
-	Location		[219, 337, 814, 775]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"27"
-	Block {
-	  BlockType		  Inport
-	  Name			  "u"
-	  SID			  "767::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "y"
-	  SID			  "767::21"
-	  Position		  [20, 136, 40, 154]
-	  ZOrder		  7
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "L"
-	  SID			  "767::22"
-	  Position		  [20, 171, 40, 189]
-	  ZOrder		  8
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "767::19"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  5
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "767::18"
-	  Tag			  "Stateflow S-Function coupled_tanks_quick_start 19"
-	  Ports			  [3, 3]
-	  Position		  [180, 115, 230, 195]
-	  ZOrder		  4
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[3 3]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "y_estimado"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "x_estimado"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "767::20"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  6
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "y_estimado"
-	  SID			  "767::26"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  12
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "x_estimado"
-	  SID			  "767::27"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  13
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  75
-	  SrcBlock		  "u"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  76
-	  SrcBlock		  "y"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  77
-	  SrcBlock		  "L"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  3
-	}
-	Line {
-	  Name			  "y_estimado"
-	  ZOrder		  78
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "y_estimado"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "x_estimado"
-	  ZOrder		  79
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "x_estimado"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  80
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  81
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -7277,14 +7494,6 @@ Model {
       }
     }
     Block {
-      BlockType		      ManualSwitch
-      Name		      "Manual Switch"
-      SID		      "793"
-      Position		      [2050, 1192, 2080, 1228]
-      ZOrder		      692
-      CurrentSetting	      "0"
-    }
-    Block {
       BlockType		      Constant
       Name		      "Maximum_Amplitude_c (V)"
       SID		      "506"
@@ -7453,6 +7662,183 @@ Model {
       BackgroundColor	      "[0.000000, 0.819608, 0.000000]"
       DropShadow	      on
       FontSize		      12
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Obs Gain Selection"
+      SID		      "863"
+      Position		      [1365, 1320, 1395, 1350]
+      ZOrder		      731
+      DropShadow	      on
+      FontSize		      12
+      Value		      "2"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Observer"
+      SID		      "767"
+      Ports		      [3, 2]
+      Position		      [2105, 1119, 2210, 1231]
+      ZOrder		      666
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Observer"
+	Location		[219, 337, 814, 775]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"27"
+	Block {
+	  BlockType		  Inport
+	  Name			  "u"
+	  SID			  "767::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "y"
+	  SID			  "767::21"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  7
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "L"
+	  SID			  "767::22"
+	  Position		  [20, 171, 40, 189]
+	  ZOrder		  8
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "767::19"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  5
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "767::18"
+	  Tag			  "Stateflow S-Function coupled_tanks_quick_start 19"
+	  Ports			  [3, 3]
+	  Position		  [180, 115, 230, 195]
+	  ZOrder		  4
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[3 3]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "y_estimado"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "x_estimado"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "767::20"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  6
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_estimado"
+	  SID			  "767::26"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  12
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "x_estimado"
+	  SID			  "767::27"
+	  Position		  [460, 136, 480, 154]
+	  ZOrder		  13
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  75
+	  SrcBlock		  "u"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  76
+	  SrcBlock		  "y"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  77
+	  SrcBlock		  "L"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "y_estimado"
+	  ZOrder		  78
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "y_estimado"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "x_estimado"
+	  ZOrder		  79
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "x_estimado"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  80
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  81
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
     }
     Block {
       BlockType		      Constant
@@ -9420,371 +9806,6 @@ Model {
       }
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem"
-      SID		      "821"
-      Ports		      [4, 1]
-      Position		      [3145, 1099, 3260, 1171]
-      ZOrder		      717
-      RequestExecContextInheritance off
-      System {
-	Name			"Subsystem"
-	Location		[-8, 0, 1928, 1056]
-	Open			on
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "x_hat"
-	  SID			  "822"
-	  Position		  [240, 188, 270, 202]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "ref"
-	  SID			  "825"
-	  Position		  [205, 258, 235, 272]
-	  ZOrder		  2
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "y"
-	  SID			  "827"
-	  Position		  [205, 333, 235, 347]
-	  ZOrder		  4
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "K"
-	  SID			  "834"
-	  Position		  [20, 88, 50, 102]
-	  ZOrder		  10
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux"
-	  SID			  "835"
-	  Ports			  [1, 3]
-	  Position		  [125, 65, 130, 125]
-	  ZOrder		  11
-	  ShowName		  off
-	  Outputs		  "3"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  DiscreteIntegrator
-	  Name			  "Discrete-Time\nIntegrator"
-	  SID			  "831"
-	  Ports			  [1, 1]
-	  Position		  [360, 247, 395, 283]
-	  ZOrder		  8
-	  gainval		  "1"
-	  SampleTime		  "0.1"
-	  ICPrevOutput		  "DiscIntNeverNeededParam"
-	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "MATLAB Function"
-	  SID			  "854"
-	  Ports			  [3, 1]
-	  Position		  [375, 161, 445, 209]
-	  ZOrder		  17
-	  LibraryVersion	  "1.32"
-	  ErrorFcn		  "Stateflow.Translate.translate"
-	  PermitHierarchicalResolution "ExplicitOnly"
-	  TreatAsAtomicUnit	  on
-	  RequestExecContextInheritance	off
-	  SFBlockType		  "MATLAB Function"
-	  System {
-	    Name		    "MATLAB Function"
-	    Location		    [219, 337, 814, 775]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "22"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "K1"
-	      SID		      "854::1"
-	      Position		      [20, 101, 40, 119]
-	      ZOrder		      -1
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "K2"
-	      SID		      "854::22"
-	      Position		      [20, 136, 40, 154]
-	      ZOrder		      8
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "x_hat"
-	      SID		      "854::21"
-	      Position		      [20, 171, 40, 189]
-	      ZOrder		      7
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      " Demux "
-	      SID		      "854::19"
-	      Ports		      [1, 1]
-	      Position		      [270, 230, 320, 270]
-	      ZOrder		      5
-	      Outputs		      "1"
-	    }
-	    Block {
-	      BlockType		      S-Function
-	      Name		      " SFunction "
-	      SID		      "854::18"
-	      Tag		      "Stateflow S-Function coupled_tanks_quick_start 22"
-	      Ports		      [3, 2]
-	      Position		      [180, 100, 230, 180]
-	      ZOrder		      4
-	      FunctionName	      "sf_sfun"
-	      PortCounts	      "[3 2]"
-	      EnableBusSupport	      on
-	      Port {
-		PortNumber		2
-		Name			"y"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      " Terminator "
-	      SID		      "854::20"
-	      Position		      [460, 241, 480, 259]
-	      ZOrder		      6
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "y"
-	      SID		      "854::5"
-	      Position		      [460, 101, 480, 119]
-	      ZOrder		      -5
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      20
-	      SrcBlock		      "K1"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      21
-	      SrcBlock		      "K2"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      22
-	      SrcBlock		      "x_hat"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "y"
-	      ZOrder		      23
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      2
-	      DstBlock		      "y"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      24
-	      SrcBlock		      " Demux "
-	      SrcPort		      1
-	      DstBlock		      " Terminator "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      25
-	      SrcBlock		      " SFunction "
-	      SrcPort		      1
-	      DstBlock		      " Demux "
-	      DstPort		      1
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product1"
-	  SID			  "838"
-	  Ports			  [2, 1]
-	  Position		  [435, 257, 505, 293]
-	  ZOrder		  14
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum"
-	  SID			  "828"
-	  Ports			  [2, 1]
-	  Position		  [540, 170, 560, 190]
-	  ZOrder		  5
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|-+"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum1"
-	  SID			  "829"
-	  Ports			  [2, 1]
-	  Position		  [290, 255, 310, 275]
-	  ZOrder		  6
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "u\n"
-	  SID			  "823"
-	  Position		  [655, 173, 685, 187]
-	  ZOrder		  -2
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  ZOrder		  42
-	  SrcBlock		  "MATLAB Function"
-	  SrcPort		  1
-	  Points		  [0, -5]
-	  DstBlock		  "Sum"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  4
-	  SrcBlock		  "Sum"
-	  SrcPort		  1
-	  DstBlock		  "u\n"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  6
-	  SrcBlock		  "ref"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  7
-	  SrcBlock		  "y"
-	  SrcPort		  1
-	  Points		  [60, 0]
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  12
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  DstBlock		  "Discrete-Time\nIntegrator"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  24
-	  SrcBlock		  "Discrete-Time\nIntegrator"
-	  SrcPort		  1
-	  DstBlock		  "Product1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  51
-	  SrcBlock		  "Demux"
-	  SrcPort		  1
-	  Points		  [225, 0]
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  52
-	  SrcBlock		  "Demux"
-	  SrcPort		  2
-	  Points		  [180, 0; 0, 90]
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  23
-	  SrcBlock		  "K"
-	  SrcPort		  1
-	  DstBlock		  "Demux"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  25
-	  SrcBlock		  "Product1"
-	  SrcPort		  1
-	  Points		  [40, 0]
-	  DstBlock		  "Sum"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  34
-	  SrcBlock		  "Demux"
-	  SrcPort		  3
-	  Points		  [33, 0; 0, 259; 251, 0; 0, -89]
-	  DstBlock		  "Product1"
-	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  43
-	  SrcBlock		  "x_hat"
-	  SrcPort		  1
-	  Points		  [85, 0]
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  3
-	}
-      }
-    }
-    Block {
       BlockType		      Sum
       Name		      "Sum5"
       SID		      "646"
@@ -9824,6 +9845,16 @@ Model {
       SID		      "839"
       Position		      [3020, 1260, 3070, 1300]
       ZOrder		      719
+      Threshold		      "2"
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch Mesh3"
+      SID		      "861"
+      Position		      [1970, 1190, 2020, 1230]
+      ZOrder		      729
       Threshold		      "2"
       InputSameDT	      off
       SaturateOnIntegerOverflow	off
@@ -10103,7 +10134,7 @@ Model {
       ZOrder		      675
       Floating		      off
       Location		      [957, 58, 1915, 536]
-      Open		      off
+      Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -10121,9 +10152,10 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      TimeRange		      "100"
-      YMin		      "-2.5"
-      YMax		      "25"
+      LegendLocations	      "0.86204     0.84693     0.10647    0.075314"
+      TimeRange		      "120"
+      YMin		      "-1"
+      YMax		      "30"
       SaveToWorkspace	      on
       SaveName		      "state1"
       DataFormat	      "StructureWithTime"
@@ -10139,7 +10171,7 @@ Model {
       ZOrder		      690
       Floating		      off
       Location		      [957, 599, 1915, 1060]
-      Open		      off
+      Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -10157,7 +10189,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      TimeRange		      "100"
+      LegendLocations	      "0.86204     0.84129     0.10647    0.078091"
+      TimeRange		      "120"
       YMin		      "0"
       YMax		      "17.5"
       SaveToWorkspace	      on
@@ -10203,9 +10236,9 @@ Model {
       BlockType		      Constant
       Name		      "angle"
       SID		      "771"
-      Position		      [1735, 1152, 1820, 1188]
+      Position		      [1680, 1062, 1765, 1098]
       ZOrder		      670
-      Value		      "[17 -17]"
+      Value		      "[0 0]"
     }
     Block {
       BlockType		      Constant
@@ -10219,9 +10252,9 @@ Model {
       BlockType		      Constant
       Name		      "mag"
       SID		      "772"
-      Position		      [1735, 1220, 1820, 1250]
+      Position		      [1680, 1135, 1765, 1165]
       ZOrder		      671
-      Value		      "[0.85 0.85]"
+      Value		      "[0.9 0.9]"
     }
     Block {
       BlockType		      Constant
@@ -10867,7 +10900,7 @@ Model {
       ZOrder		      1576
       SrcBlock		      "mag"
       SrcPort		      1
-      Points		      [28, 0; 0, -20]
+      Points		      [8, 0; 0, -25]
       DstBlock		      "MATLAB Function"
       DstPort		      2
     }
@@ -10875,7 +10908,7 @@ Model {
       ZOrder		      1577
       SrcBlock		      "angle"
       SrcPort		      1
-      Points		      [55, 0]
+      Points		      [35, 0]
       DstBlock		      "MATLAB Function"
       DstPort		      1
     }
@@ -10884,7 +10917,7 @@ Model {
       SrcBlock		      "From"
       SrcPort		      1
       Points		      [45, 0; 0, 75]
-      DstBlock		      "MATLAB Function1"
+      DstBlock		      "Observer"
       DstPort		      1
     }
     Line {
@@ -10892,12 +10925,12 @@ Model {
       SrcBlock		      "From18"
       SrcPort		      1
       Points		      [23, 0; 0, 65]
-      DstBlock		      "MATLAB Function1"
+      DstBlock		      "Observer"
       DstPort		      2
     }
     Line {
       ZOrder		      1590
-      SrcBlock		      "MATLAB Function1"
+      SrcBlock		      "Observer"
       SrcPort		      2
       DstBlock		      "Demux"
       DstPort		      1
@@ -10914,14 +10947,6 @@ Model {
       SrcBlock		      "Tank1"
       SrcPort		      1
       DstBlock		      "Mux"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      1641
-      SrcBlock		      "Constant"
-      SrcPort		      1
-      Points		      [92, 0; 0, -75]
-      DstBlock		      "Manual Switch"
       DstPort		      2
     }
     Line {
@@ -10955,32 +10980,25 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      1642
-      SrcBlock		      "Manual Switch"
+      ZOrder		      1801
+      SrcBlock		      "Switch Mesh3"
       SrcPort		      1
-      Points		      [4, 0]
+      Points		      [64, 0]
       Branch {
 	ZOrder			1650
-	Points			[0, 12; 11, 0; 0, 118]
+	Points			[0, 130]
 	DstBlock		"Display"
 	DstPort			1
       }
       Branch {
 	ZOrder			1649
-	DstBlock		"MATLAB Function1"
+	DstBlock		"Observer"
 	DstPort			3
       }
     }
     Line {
-      ZOrder		      1643
-      SrcBlock		      "MATLAB Function"
-      SrcPort		      1
-      DstBlock		      "Manual Switch"
-      DstPort		      1
-    }
-    Line {
       ZOrder		      1648
-      SrcBlock		      "MATLAB Function1"
+      SrcBlock		      "Observer"
       SrcPort		      1
       Points		      [45, 0; 0, -70]
       DstBlock		      "Terminator"
@@ -11031,13 +11049,12 @@ Model {
       Points		      [65, 0]
       Branch {
 	ZOrder			1769
-	Points			[0, 55]
-	DstBlock		"Subsystem"
+	Points			[0, 75]
+	DstBlock		"Controller Discrete "
 	DstPort			1
       }
       Branch {
 	ZOrder			1768
-	Points			[0, -50]
 	DstBlock		"Display1"
 	DstPort			1
       }
@@ -11046,42 +11063,41 @@ Model {
       ZOrder		      1770
       SrcBlock		      "Ref"
       SrcPort		      1
-      Points		      [30, 0; 0, 20]
-      DstBlock		      "Subsystem"
+      Points		      [30, 0; 0, 40]
+      DstBlock		      "Controller Discrete "
       DstPort		      2
     }
     Line {
       ZOrder		      1771
       SrcBlock		      "From19"
       SrcPort		      1
-      Points		      [98, 0; 0, -20]
-      DstBlock		      "Subsystem"
+      DstBlock		      "Controller Discrete "
       DstPort		      3
     }
     Line {
       ZOrder		      1777
-      SrcBlock		      "Subsystem"
+      SrcBlock		      "Controller Discrete "
       SrcPort		      1
       Points		      [25, 0]
       Branch {
-	ZOrder			1779
-	Points			[0, 200]
-	DstBlock		"Controller"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			1778
-	Points			[0, -365]
+	ZOrder			1806
+	Points			[0, -385]
 	DstBlock		"Switch Mesh1"
 	DstPort			3
+      }
+      Branch {
+	ZOrder			1779
+	Points			[0, 180]
+	DstBlock		"Controller"
+	DstPort			1
       }
     }
     Line {
       ZOrder		      1776
       SrcBlock		      "Switch Mesh2"
       SrcPort		      1
-      Points		      [52, 0; 0, -115]
-      DstBlock		      "Subsystem"
+      Points		      [52, 0; 0, -95]
+      DstBlock		      "Controller Discrete "
       DstPort		      4
     }
     Line {
@@ -11154,29 +11170,62 @@ Model {
       DstBlock		      "Goto5"
       DstPort		      1
     }
+    Line {
+      ZOrder		      1802
+      SrcBlock		      "MATLAB Function"
+      SrcPort		      1
+      Points		      [5, 0; 0, 85]
+      DstBlock		      "Switch Mesh3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1803
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [124, 0; 0, -130]
+      DstBlock		      "Switch Mesh3"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      1804
+      SrcBlock		      "From24"
+      SrcPort		      1
+      Points		      [40, 0; 0, -25]
+      DstBlock		      "Switch Mesh3"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      1805
+      SrcBlock		      "Obs Gain Selection"
+      SrcPort		      1
+      DstBlock		      "Goto30"
+      DstPort		      1
+    }
     Annotation {
       SID		      "798"
       Name		      "Controlador Discreto"
-      Position		      [2640, 1014, 3352, 1504]
+      Position		      [3001, 984, 3723, 1504]
       InternalMargins	      [0, 0, 0, 0]
       FixedHeight	      on
       FixedWidth	      on
-      HorizontalAlignment     "left"
       VerticalAlignment	      "top"
       DropShadow	      on
       ZOrder		      -1
+      FontSize		      18
+      FontWeight	      "bold"
     }
     Annotation {
       SID		      "797"
       Name		      "Observador"
-      Position		      [1687, 1014, 2592, 1449]
+      Position		      [2127, 1014, 3067, 1429]
       InternalMargins	      [0, 0, 0, 0]
       FixedHeight	      on
       FixedWidth	      on
-      HorizontalAlignment     "left"
       VerticalAlignment	      "top"
       DropShadow	      on
       ZOrder		      -2
+      FontSize		      18
+      FontWeight	      "bold"
     }
     Annotation {
       SID		      "796"
@@ -15410,10 +15459,7 @@ Stateflow {
     firstTransition	    179
     firstJunction	    178
     viewObj		    173
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -15547,7 +15593,7 @@ Stateflow {
   }
   chart {
     id			    181
-    name		    "MATLAB Function1"
+    name		    "Observer"
     windowPosition	    [352.761 488.141 161 328]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.000677131425054]
@@ -15729,7 +15775,7 @@ Stateflow {
   }
   instance {
     id			    190
-    name		    "MATLAB Function1"
+    name		    "Observer"
     machine		    1
     chart		    181
   }
@@ -15743,10 +15789,7 @@ Stateflow {
     firstTransition	    196
     firstJunction	    195
     viewObj		    191
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -15868,10 +15911,7 @@ Stateflow {
     firstTransition	    204
     firstJunction	    203
     viewObj		    198
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -16007,7 +16047,7 @@ Stateflow {
   }
   chart {
     id			    206
-    name		    "Subsystem/MATLAB Function"
+    name		    "Controller Discrete /MATLAB Function"
     windowPosition	    [352.761 488.141 161 328]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.000677131425054]
@@ -16163,7 +16203,7 @@ Stateflow {
   }
   instance {
     id			    214
-    name		    "Subsystem/MATLAB Function"
+    name		    "Controller Discrete /MATLAB Function"
     machine		    1
     chart		    206
   }
